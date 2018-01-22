@@ -180,6 +180,7 @@ BOARD_VNDK_VERSION := current
 WIFI_HIDL_FEATURE_AWARE := true
 WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
 QC_WIFI_HIDL_FEATURE_DUAL_AP := true
+CONFIG_ACS := true
 
 # Inherit from the proprietary version
 include vendor/xiaomi/juice/BoardConfigVendor.mk
