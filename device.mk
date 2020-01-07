@@ -289,6 +289,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
 
+# ParanoidDoze
+PRODUCT_PACKAGES += \
+    ParanoidDoze
+
 # QC common
 $(call inherit-product, device/qcom/common/common.mk)
 TARGET_BOARD_PLATFORM := bengal
