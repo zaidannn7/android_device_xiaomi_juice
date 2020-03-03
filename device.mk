@@ -248,9 +248,6 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0.vendor
 
-# GSI
-$(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
-
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl \
