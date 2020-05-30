@@ -1,8 +1,6 @@
 /*
- *
  *  Copyright (c) 2013, The Linux Foundation. All rights reserved.
- *  Not a Contribution, Apache license notifications and license are retained
- *  for attribution purposes only.
+ *  Not a Contribution.
  *
  * Copyright (C) 2012 The Android Open Source Project
  *
@@ -28,6 +26,8 @@
 #define BLE_VND_INCLUDED   TRUE
 #define GATT_MAX_PHY_CHANNEL  10
 
-/* Increasing SEPs to 12 from 6 to support SHO/MCast i.e. two streams per codec */
+// skips conn update at conn completion
+#define BT_CLEAN_TURN_ON_DISABLED 1
+
 #define AVDT_NUM_SEPS 35
 #endif
