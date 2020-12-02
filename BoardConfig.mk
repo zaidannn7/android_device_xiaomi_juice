@@ -116,6 +116,9 @@ TARGET_KERNEL_ADDITIONAL_FLAGS := AS=llvm-as LLVM_IAS=1 LLVM=1 LD=ld.lld AR=llvm
 TARGET_KERNEL_ADDITIONAL_FLAGS += OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump READELF=llvm-readelf HOSTAR=llvm-ar HOSTLD=ld.lld
 TARGET_KERNEL_ADDITIONAL_FLAGS += HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
 
+# Lights
+TARGET_PROVIDES_LIBLIGHT := true
+
 # Media
 TARGET_DISABLED_UBWC := true
 
