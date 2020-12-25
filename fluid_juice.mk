@@ -28,6 +28,12 @@ PRODUCT_PRODUCT_PROPERTIES += \
 	ro.fluid.maintainer=Paranoid Lover? \
 	ro.fluid.cpu=SM6115
 
+# Target
+TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_USES_BLUR := true
+USE_PIXEL_CHARGING := true
+TARGET_SUPPORTS_QUICK_TAP := true
+
 # GApps
 ifeq ($(WITH_GMS),true)
 TARGET_INCLUDE_GAPPS := true

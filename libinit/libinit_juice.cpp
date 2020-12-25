@@ -72,31 +72,61 @@ void vendor_load_properties() {
     std::string hwname = GetProperty("ro.boot.product.hardware.sku", "");
     if (hwname == "lime") {
         if (region == "CN" || region == "Japan") {
+            property_override("bluetooth.device.default_name", "Redmi 9T");
             property_override("ro.product.brand", "Redmi");
-            property_override("ro.product.model", "Redmi 9 Power");
             property_override("ro.product.device", "lime");
+            property_override("ro.product.manufacturer", "Xiaomi");
+            property_override("ro.product.marketname", "Redmi 9T");
+            property_override("ro.product.model", "M2010J19SG");
+            property_override("ro.product.mod_device", "fluid_juice");
+            property_override("ro.product.name", "lime_global");
         }
         if (region == "India") {
+            property_override("bluetooth.device.default_name", "Redmi 9T");
             property_override("ro.product.brand", "Redmi");
-            property_override("ro.product.model", "Redmi Note 9 4G");
             property_override("ro.product.device", "lime");
+            property_override("ro.product.manufacturer", "Xiaomi");
+            property_override("ro.product.marketname", "Redmi 9T");
+            property_override("ro.product.model", "M2010J19SG");
+            property_override("ro.product.mod_device", "fluid_juice");
+            property_override("ro.product.name", "lime_global");
         }
         if (region == "Global") {
+            property_override("bluetooth.device.default_name", "Redmi 9T");
             property_override("ro.product.brand", "Redmi");
-            property_override("ro.product.model", "Redmi 9T");
             property_override("ro.product.device", "lime");
+            property_override("ro.product.manufacturer", "Xiaomi");
+            property_override("ro.product.marketname", "Redmi 9T");
+            property_override("ro.product.model", "M2010J19SG");
+            property_override("ro.product.mod_device", "fluid_juice");
+            property_override("ro.product.name", "lime_global");
         }
     } else if (hwname == "lemon") {
+        property_override("bluetooth.device.default_name", "Redmi 9T NFC");
         property_override("ro.product.brand", "Redmi");
-        property_override("ro.product.model", "Redmi 9T NFC");
         property_override("ro.product.device", "lemon");
+        property_override("ro.product.manufacturer", "Xiaomi");
+        property_override("ro.product.marketname", "Redmi 9T NFC");
+        property_override("ro.product.model", "M2010J19SY");
+        property_override("ro.product.mod_device", "fluid_juice");
+        property_override("ro.product.name", "lemon_global");
     } else if (hwname == "citrus") {
+        property_override("bluetooth.device.default_name", "POCO M3");
         property_override("ro.product.brand", "POCO");
-        property_override("ro.product.model", "POCO M3");
         property_override("ro.product.device", "citrus");
+        property_override("ro.product.manufacturer", "Xiaomi");
+        property_override("ro.product.marketname", "POCO M3");
+        property_override("ro.product.model", "M2010J19CG");
+        property_override("ro.product.mod_device", "fluid_juice");
+        property_override("ro.product.name", "citrus_global");
     } else if (hwname == "pomelo") {
+        property_override("bluetooth.device.default_name", "Redmi 9 Power");
         property_override("ro.product.brand", "Redmi");
-        property_override("ro.product.model", "Redmi 9T");
         property_override("ro.product.device", "pomelo");
+        property_override("ro.product.manufacturer", "Xiaomi");
+        property_override("ro.product.marketname", "Redmi 9 Power");
+        property_override("ro.product.model", "M2010J19SL");
+        property_override("ro.product.mod_device", "fluid_juice");
+        property_override("ro.product.name", "pomelo_global");
     }
 }
