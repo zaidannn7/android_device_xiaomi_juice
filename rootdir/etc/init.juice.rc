@@ -1,0 +1,7 @@
+#
+# Custom juice-specific init script
+#
+
+on early-init
+    write /dev/stune/schedtune.boost 50
+    write /dev/stune/schedtune.prefer_idle 1
