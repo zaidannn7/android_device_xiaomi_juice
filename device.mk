@@ -321,10 +321,11 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init/init.qti.early_init.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qti.early_init.sh \
-    $(LOCAL_PATH)/init/init.qti.qcv.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qti.qcv.sh
+    $(LOCAL_PATH)/init/init.qti.dcvs.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qti.dcvs.sh
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init/init.juice.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.juice.rc \
+    $(LOCAL_PATH)/init/init.juice.perf.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.juice.perf.rc \
     $(LOCAL_PATH)/init/init.target.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.target.rc \
     $(LOCAL_PATH)/init/ueventd.juice.rc:$(TARGET_COPY_OUT_VENDOR)/ueventd.rc
 
