@@ -147,6 +147,7 @@ VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 USE_SENSOR_MULTI_HAL := true
 
 # Sepolicy
+include device/qcom/sepolicy_vndr/SEPolicy.mk
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 SELINUX_IGNORE_NEVERALLOWS := true
 
