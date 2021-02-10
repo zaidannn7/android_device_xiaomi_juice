@@ -266,6 +266,18 @@ PRODUCT_PACKAGES += \
     librmnetctl \
     libxml2
 
+# Sensors
+PRODUCT_PACKAGES += \
+    android.hardware.sensors@2.0-service.multihal \
+    libsensorndkbridge
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.sensors.hal_trigger_ssr=false \
+    persist.vendor.sensors.odl.adsp=true \
+    persist.vendor.sensors.enable.rt_task=false \
+    persist.vendor.sensors.support_direct_channel=false \
+    persist.vendor.sensors.enable.bypass_worker=true
+
 # Kernel configurations
 TARGET_KERNEL_VERSION := 4.19
 KERNEL_LLVM_SUPPORT := true
