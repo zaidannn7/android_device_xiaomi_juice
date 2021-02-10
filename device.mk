@@ -162,6 +162,13 @@ PRODUCT_PACKAGES += \
     libhwbinder \
     libhwbinder.vendor
 
+# IPACM
+PRODUCT_PACKAGES += \
+    ipacm \
+    IPACM_cfg.xml \
+    libipanat \
+    liboffloadhal
+
 # Manufacturer
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.soc.manufacturer=QTI
