@@ -212,6 +212,10 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video_le.xml
 
+# Manufacturer
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.soc.manufacturer=QTI
+
 # Net
 PRODUCT_PACKAGES += \
     netutils-wrapper-1.0
@@ -237,9 +241,17 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.power-service-qti
 
-# Manufacturer
+# QMI
+PRODUCT_PACKAGES += \
+    libjson \
+    libqti_vndfwk_detect \
+    libqti_vndfwk_detect.vendor \
+    libvndfwk_detect_jni.qti \
+    libvndfwk_detect_jni.qti.vendor
+
+# QSPM
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.soc.manufacturer=QTI
+    ro.vendor.qspm.enable=true
 
 # RRO configuration
 TARGET_USES_RRO := true
@@ -248,10 +260,6 @@ TARGET_USES_RRO := true
 TARGET_KERNEL_VERSION := 4.19
 KERNEL_LLVM_SUPPORT := true
 KERNEL_SD_LLVM_SUPPORT := true
-
-# QSPM
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.qspm.enable=true
 
 # Treble flag
 PRODUCT_FULL_TREBLE_OVERRIDE := true
