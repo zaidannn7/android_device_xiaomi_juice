@@ -255,6 +255,17 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # RRO configuration
 TARGET_USES_RRO := true
 
+# RIL
+PRODUCT_PACKAGES += \
+    android.hardware.radio@1.6.vendor \
+    android.hardware.radio.config@1.3.vendor \
+    android.hardware.radio.deprecated@1.0.vendor \
+    android.hardware.secure_element@1.2.vendor \
+    android.system.net.netd@1.1.vendor \
+    libprotobuf-cpp-full \
+    librmnetctl \
+    libxml2
+
 # Kernel configurations
 TARGET_KERNEL_VERSION := 4.19
 KERNEL_LLVM_SUPPORT := true
