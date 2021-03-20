@@ -75,6 +75,9 @@ TARGET_USES_HWC2 := true
 TARGET_USES_ION := true
 TARGET_USES_NEW_ION_API := true
 
+# DT2W
+TARGET_TAP_TO_WAKE_NODE := "/sys/touchpanel/double_tap"
+
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
 
