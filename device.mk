@@ -291,7 +291,7 @@ PRODUCT_PACKAGES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-service.juice
+    android.hardware.lights-service.qti
 
 # LMK tuning
 PRODUCT_PROPERTY_OVERRIDES += \

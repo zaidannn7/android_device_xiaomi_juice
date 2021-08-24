@@ -1,4 +1,4 @@
-allow hal_light_default {
+gallow hal_light_default {
   sysfs_leds
 }:file rw_file_perms;
 
