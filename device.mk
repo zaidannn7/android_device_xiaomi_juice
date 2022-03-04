@@ -68,7 +68,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     audio.a2dp.bengal \
-    audio.a2dp.default \
     audio.primary.bengal \
     audio.primary.default \
     audio.r_submix.default \
