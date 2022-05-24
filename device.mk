@@ -349,6 +349,7 @@ DEVICE := juice
 
 TARGET_COMMON_QTI_COMPONENTS := \
     av \
+    usb \
     vibrator
 
 # QMI
@@ -430,10 +431,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += \
     telephony-ext
-
-# USB
-PRODUCT_PACKAGES += \
-    android.hardware.usb@1.2-service-qti
 
 # Vendor service manager
 PRODUCT_PACKAGES += \
