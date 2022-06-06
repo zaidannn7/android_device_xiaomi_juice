@@ -80,6 +80,9 @@ TARGET_OTA_ASSERT_DEVICE := lime,citrus,lemon,pomelo,juice
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/configs/vintf/manifest.xml
 DEVICE_MATRIX_FILE := $(DEVICE_PATH)/configs/vintf/compatibility_matrix.xml
 
+ODM_MANIFEST_SKUS += lemon
+ODM_MANIFEST_LEMON_FILES := $(DEVICE_PATH)/manifest_lemon.xml
+
 # Init
 TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_juice
 TARGET_RECOVERY_DEVICE_MODULES := libinit_juice
