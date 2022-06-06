@@ -154,6 +154,12 @@ PRODUCT_VENDOR_PROPERTIES += \
     vendor.display.disable_layer_stitch=1 \
     vendor.display.enable_rounded_corner=0
 
+PRODUCT_VENDOR_PROPERTIES += \
+    debug.sf.high_fps_early_gl_phase_offset_ns=-2000000 \
+    debug.sf.high_fps_early_phase_offset_ns=-5000000 \
+    debug.sf.high_fps_late_app_phase_offset_ns=1000000 \
+    debug.sf.high_fps_late_sf_phase_offset_ns=-2000000 \
+
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.disable_backpressure=1 \
     vendor.display.enable_async_powermode=0 \
