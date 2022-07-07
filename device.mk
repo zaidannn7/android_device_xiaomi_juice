@@ -293,7 +293,6 @@ PRODUCT_COPY_FILES += \
 # QC common
 $(call inherit-product, device/qcom/common/common.mk)
 TARGET_BOARD_PLATFORM := bengal
-TARGET_USE_SM8250_HALS := true
 
 TARGET_COMMON_QTI_COMPONENTS := \
     av \
@@ -395,7 +394,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/bin/init.qcom.usb.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qcom.usb.sh
 
 PRODUCT_VENDOR_PROPERTIES += \
-    persist.vendor.usb.config=mtp,adb
+    persist.vendor.usb.config=mtp,adb \
+    ro.adb.secure=0 \
+    ro.secure=0 \
+    ro.debuggable=1 \
+    ro.control_privapp_permissions=log
 
 # Vendor service manager
 PRODUCT_PACKAGES += \
