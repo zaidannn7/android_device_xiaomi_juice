@@ -324,7 +324,15 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init/init.qti.qcv.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qti.qcv.sh
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/etc/init.target.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.target.rc \
+    $(LOCAL_PATH)/init/init.juice.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.juice.rc \
+    $(LOCAL_PATH)/init/init.target.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.target.rc \
+    $(LOCAL_PATH)/init/ueventd.juice.rc:$(TARGET_COPY_OUT_VENDOR)/ueventd.rc
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/init/init.xiaomi.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.xiaomi.rc \
+    $(LOCAL_PATH)/init/init.xiaomi.camera.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.xiaomi.camera.rc \
+    $(LOCAL_PATH)/init/init.xiaomi.display.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.xiaomi.display.rc \
+    $(LOCAL_PATH)/init/init.xiaomi.fingerprint.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.xiaomi.fingerprint.rc
 
 # Radio
 PRODUCT_PACKAGES += \
@@ -379,11 +387,11 @@ BOARD_VNDK_VERSION := current
 
 # USB
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/etc/init.qcom.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.qcom.usb.rc
+    $(LOCAL_PATH)/init/init.qcom.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.qcom.usb.rc
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/bin/init.mi.usb.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.mi.usb.sh \
-    $(LOCAL_PATH)/rootdir/bin/init.qcom.usb.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qcom.usb.sh
+    $(LOCAL_PATH)/init/init.mi.usb.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.mi.usb.sh \
+    $(LOCAL_PATH)/init/init.qcom.usb.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qcom.usb.sh
 
 PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.usb.config=mtp,adb \
