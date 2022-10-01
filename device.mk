@@ -139,19 +139,19 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.3.vendor \
     android.hardware.drm@1.3-service.clearkey
 
-# GPS
-PRODUCT_PACKAGES += \
-    android.hardware.gnss@1.1.vendor \
-    android.hardware.gnss@2.1.vendor
+# Enable incremental FS feature
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.incremental.enable=1
 
 # Fastboot
 PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.0-impl-mock \
     fastbootd
 
-# Enable incremental FS feature
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.incremental.enable=1
+# GPS
+PRODUCT_PACKAGES += \
+    android.hardware.gnss@1.1.vendor \
+    android.hardware.gnss@2.1.vendor
 
 # Manufacturer
 PRODUCT_PROPERTY_OVERRIDES += \
