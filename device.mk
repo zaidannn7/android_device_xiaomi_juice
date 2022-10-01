@@ -88,10 +88,18 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.camera.device@3.5.vendor \
     vendor.qti.hardware.camera.postproc@1.0.vendor
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    camera.disable_zsl_mode=1
+
 # Consumer IR
 PRODUCT_PACKAGES += \
     android.hardware.ir@1.0-impl \
     android.hardware.ir@1.0-service
+
+# Crypto
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.crypto.volume.filenames_mode = "aes-256-cts" \
+    ro.crypto.allow_encrypt_override = true
 
 # Display
 PRODUCT_PACKAGES += \
@@ -340,14 +348,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += \
     WfdCommon
-
-# Property to disable ZSL mode
-PRODUCT_PROPERTY_OVERRIDES += \
-    camera.disable_zsl_mode=1
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.crypto.volume.filenames_mode = "aes-256-cts" \
-    ro.crypto.allow_encrypt_override = true
 
 # Inherit the proprietary files
 $(call inherit-product, vendor/xiaomi/juice/juice-vendor.mk)
