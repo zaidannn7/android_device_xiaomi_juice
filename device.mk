@@ -358,7 +358,8 @@ PRODUCT_COPY_FILES += \
 
 # Manufacturer
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.soc.manufacturer=QTI
+   ro.soc.manufacturer=QTI \
+   ro.soc.model=SM6115
 
 # Network
 PRODUCT_PACKAGES += \
