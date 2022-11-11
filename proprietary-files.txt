@@ -1126,6 +1126,10 @@ vendor/lib64/nfc_nci.st21nfc.st.so
 vendor/firmware/st21nfc_fw.bin
 vendor/firmware/st21nfc_fw7.bin
 
+# OpenVX - from LA.UM.9.12.r1-14400-SMxx50.QSSI12.0
+vendor/lib/libopenvx.so|0caa7c42935a77da34dedafa44a5fa400ad7e45c
+vendor/lib64/libopenvx.so|fe914862f469b64e1ea5ccb1022dd3f20668ec48
+
 # Perf
 vendor/bin/hw/vendor.qti.hardware.perf@2.2-service
 vendor/etc/init/vendor.qti.hardware.perf@2.2-service.rc
