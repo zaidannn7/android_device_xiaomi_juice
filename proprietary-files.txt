@@ -1,4 +1,5 @@
 # Device proprietary files - from lime MIUI V12.5.11.0.RQJMIXM package, unless pinned
+# qssi-user-11-RKQ1.201004.002-V12.5.7.0.RJFMIXM-release-keys blobs from citrus
 
 # ACDB
 vendor/etc/acdbdata/IDP/bengal-scubaidp-snd-card/IDP_Scuba_Bluetooth_cal.acdb
@@ -436,6 +437,36 @@ vendor/lib64/libmmcamera_faceproc2.so
 vendor/lib64/libmmcamera_lscv35.so
 vendor/lib64/libmmcamera_mfnr.so
 vendor/lib64/libmmcamera_mfnr_t4.so
+
+# Camera - from qssi-user-11-RKQ1.201004.002-V12.5.7.0.RJFMIXM-release-keys
+vendor/lib64/camera/com.qti.eeprom.citrus_ofilm_ov8856_front_eeprom.so
+vendor/lib64/camera/com.qti.eeprom.citrus_sunny_ov8856_front_eeprom.so
+vendor/lib64/camera/com.qti.sensor.citrus_ofilm_ov8856_front.so
+vendor/lib64/camera/com.qti.sensor.citrus_sunny_hi259_macro.so
+vendor/lib64/camera/com.qti.sensor.citrus_sunny_ov02b1b_depth.so
+vendor/lib64/camera/com.qti.sensor.citrus_sunny_ov8856_front.so
+vendor/lib64/camera/com.qti.sensor.citrus_sunny_s5kgm1sp_main.so
+vendor/lib64/camera/com.qti.sensor.citrus_sunny_s5kgm1st_main.so
+vendor/lib64/camera/com.qti.sensormodule.citrus_ofilm_ov8856_front.bin
+vendor/lib64/camera/com.qti.sensormodule.citrus_ofilm_ov8856g2_front.bin
+vendor/lib64/camera/com.qti.sensormodule.citrus_sunny_hi259_macro.bin
+vendor/lib64/camera/com.qti.sensormodule.citrus_sunny_ov02b1b_depth.bin
+vendor/lib64/camera/com.qti.sensormodule.citrus_sunny_ov8856_front.bin
+vendor/lib64/camera/com.qti.sensormodule.citrus_sunny_ov8856g2_front.bin
+vendor/lib64/camera/com.qti.sensormodule.citrus_sunny_s5kgm1sp_main.bin
+vendor/lib64/camera/com.qti.sensormodule.citrus_sunny_s5kgm1st_main.bin
+vendor/lib64/camera/com.qti.tuned.citrus_ofilm_ov8856_front.bin
+vendor/lib64/camera/com.qti.tuned.citrus_sunny_hi259_macro.bin
+vendor/lib64/camera/com.qti.tuned.citrus_sunny_hi259_macro_india.bin
+vendor/lib64/camera/com.qti.tuned.citrus_sunny_ov02b1b_depth.bin
+vendor/lib64/camera/com.qti.tuned.citrus_sunny_ov02b1b_depth_india.bin
+vendor/lib64/camera/com.qti.tuned.citrus_sunny_ov8856_front.bin
+vendor/lib64/camera/com.qti.tuned.citrus_sunny_ov8856_front_global.bin
+vendor/lib64/camera/com.qti.tuned.citrus_sunny_ov8856_front_india.bin
+vendor/lib64/camera/com.qti.tuned.citrus_sunny_s5kgm1sp_main.bin
+vendor/lib64/camera/com.qti.tuned.citrus_sunny_s5kgm1sp_main_india.bin
+vendor/lib64/camera/com.qti.tuned.citrus_sunny_s5kgm1st_main.bin
+vendor/lib64/camera/com.qti.tuned.citrus_sunny_s5kgm1st_main_india.bin
 
 # Configstore
 vendor/bin/hw/android.hardware.configstore@1.1-service
