@@ -166,9 +166,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
    ro.crypto.volume.options=::v2
 
 # capabilityconfigstore
-PRODUCT_PACKAGES += vendor.qti.hardware.capabilityconfigstore@1.0.vendor
+PRODUCT_PACKAGES +=  \
+    vendor.qti.hardware.capabilityconfigstore@1.0.vendor
 
 # Display
+TARGET_USE_QCOM_OFFSET := true
 PRODUCT_PACKAGES += \
     disable_configstore
 
@@ -308,7 +310,6 @@ PRODUCT_SYSTEM_PROPERTIES += \
 
 # Overlays
 PRODUCT_PACKAGES += \
-    AOSPAJuiceFrameworksOverlay \
     JuiceCarrierConfigOverlay \
     JuiceFrameworksOverlay \
     JuiceSystemUIOverlay \
@@ -348,7 +349,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init/init.recovery.qcom.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.qcom.rc
 
 # QC common
+$(call inherit-product, device/qcom/common/common.mk)
 TARGET_BOARD_PLATFORM := bengal
+TARGET_USE_BENGAL_HALS := true
 
 TARGET_COMMON_QTI_COMPONENTS := \
     adreno \
