@@ -246,8 +246,6 @@ PRODUCT_VENDOR_PROPERTIES += \
     ro.config.avoid_gfx_accel=true
 
 # GPS
-LOC_HIDL_VERSION := 4.0
-
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps/flp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/flp.conf \
     $(LOCAL_PATH)/configs/gps/gps.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gps.conf
@@ -368,6 +366,7 @@ PRODUCT_COPY_FILES += \
 $(call inherit-product, device/qcom/common/common.mk)
 TARGET_BOARD_PLATFORM := bengal
 TARGET_USE_BENGAL_HALS := true
+QCOM_HARDWARE_VARIANT := bengal
 
 TARGET_COMMON_QTI_COMPONENTS := \
     audio \
