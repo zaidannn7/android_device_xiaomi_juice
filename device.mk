@@ -369,6 +369,7 @@ TARGET_USE_BENGAL_HALS := true
 QCOM_HARDWARE_VARIANT := bengal
 
 TARGET_COMMON_QTI_COMPONENTS := \
+    alarm \
     audio \
     av \
     bt \
