@@ -345,7 +345,8 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     init.qti.dcvs.sh \
-    init.qti.early_init.sh
+    init.qti.early_init.sh \
+    init.juice.perf.sh
 
 PRODUCT_PACKAGES += \
     fstab.zram \

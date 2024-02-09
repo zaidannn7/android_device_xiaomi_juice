@@ -1,4 +1,4 @@
-# Copyright (c) 2022 Paranoid Android. All rights reserved.
+# Copyright (c) 2024 Paranoid Android. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -44,6 +44,8 @@ on boot
     chmod 0660 /sys/class/kgsl/kgsl-3d0/min_pwrlevel
 
 on property:vendor.post_boot.parsed=1
+    exec u:r:vendor_qti_init_shell:s0 -- /vendor/bin/init.juice.perf.sh
+
     # Setup runtime cpusets
     write /dev/cpuset/top-app/cpus 0-7
     write /dev/cpuset/foreground/cpus 0-2,4-6
@@ -53,29 +55,28 @@ on property:vendor.post_boot.parsed=1
 
     # Configure CPU frequencies
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 300000
-    write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/hispeed_freq 1305600
+    write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/hispeed_freq 1612800
     write /sys/devices/system/cpu/cpu6/cpufreq/scaling_min_freq 300000
-    write /sys/devices/system/cpu/cpu6/cpufreq/schedutil/hispeed_freq 1401600
+    write /sys/devices/system/cpu/cpu6/cpufreq/schedutil/hispeed_freq 1536000
+
+    # Configure dynamic stune boost
+    write /sys/module/cpu_boost/parameters/dynamic_stune_boost 15
+    write /sys/module/cpu_boost/parameters/dynamic_stune_boost_ms 1000
+    write /dev/stune/top-app/schedtune.sched_boost 15
 
     # Configure governor parameters
-    write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/hispeed_load 90
     write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/up_rate_limit_us 500
-    write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/up_rate_limit_us_screen_off 2000
-    write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/down_rate_limit_us 2000
-    write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/down_rate_limit_us_screen_off 2000
+    write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/down_rate_limit_us 20000
     write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/pl 1
-    write /sys/devices/system/cpu/cpu6/cpufreq/schedutil/hispeed_load 90
     write /sys/devices/system/cpu/cpu6/cpufreq/schedutil/up_rate_limit_us 500
-    write /sys/devices/system/cpu/cpu6/cpufreq/schedutil/up_rate_limit_us_screen_off 2000
-    write /sys/devices/system/cpu/cpu6/cpufreq/schedutil/down_rate_limit_us 2000
-    write /sys/devices/system/cpu/cpu6/cpufreq/schedutil/down_rate_limit_us_screen_off 2000
+    write /sys/devices/system/cpu/cpu6/cpufreq/schedutil/down_rate_limit_us 20000
     write /sys/devices/system/cpu/cpu6/cpufreq/schedutil/pl 1
 
     # Configure CPU input boost
     write /sys/module/cpu_boost/parameters/input_boost_freq "0:1401600"
     write /sys/module/cpu_boost/parameters/input_boost_ms 250
-    write /sys/module/cpu_boost/parameters/powerkey_input_boost_freq "0:1804800 1:0 2:0 3:0 4:2016000 5:0 6:0 7:0"
-    write /sys/module/cpu_boost/parameters/powerkey_input_boost_ms 750
+    write /sys/devices/system/cpu/cpu_boost/powerkey_input_boost_freq "0:1804800 1:1804800 2:1804800 3:1804800 4:2016000 5:2016000 6:2016000 7:2016000"
+    write /sys/devices/system/cpu/cpu_boost/powerkey_input_boost_ms 2000
 
     # Configure scheduler
     write /proc/sys/kernel/sched_child_runs_first 1
@@ -129,12 +130,6 @@ on property:vendor.post_boot.parsed=1
     # Back to default VM settings
     write /proc/sys/vm/dirty_expire_centisecs 3000
     write /proc/sys/vm/dirty_background_ratio 10
-
-    # IRQ Tuning
-    # IRQ 218: msm_drm
-    # IRQ 209: kgsl_3d0
-    write /proc/irq/218/smp_affinity_list 2
-    write /proc/irq/209/smp_affinity_list 1
 
 on property:sys.boot_completed=1
     # Read only one page at a time
