@@ -116,23 +116,18 @@ BOARD_RAMDISK_USE_LZ4 := true
 BOARD_KERNEL_SEPARATED_DTBO := false
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADERS := kernel/xiaomi/juice
-TARGET_KERNEL_CONFIG := vendor/bengal-perf_defconfig
+TARGET_KERNEL_CONFIG := vendor/juice_defconfig
 
 TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb
 BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
 BOARD_BOOTIMG_HEADER_VERSION := 2
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB)
-KERNEL_NEW_GCC_SUPPORT := true
-ifeq ($(KERNEL_NEW_GCC_SUPPORT),true)
-    KERNEL_CROSS_COMPILE := aarch64-elf-
-    KERNEL_CROSS_COMPILE_ARM32 := arm-eabi-
-    KERNEL_ARM64_GCC_BIN := $(SOURCE_ROOT)/prebuilts/gcc/$(BUILD_OS)-x86/aarch64/aarch64-elf/bin
-    KERNEL_ARM32_GCC_BIN := $(SOURCE_ROOT)/prebuilts/gcc/$(BUILD_OS)-x86/arm/arm-eabi/bin
-    $(warning Compiling the kernel with GCC)
-    cc := CC=$(KERNEL_ARM64_GCC_BIN)/aarch64-elf-gcc
-    real_cc := PATH=$(KERNEL_ARM64_GCC_BIN):$(KERNEL_ARM32_GCC_BIN):$$PATH REAL_CC=aarch64-elf-gcc AR=aarch64-elf-ar NM=aarch64-elf-nm OBJCOPY=aarch64-elf-objcopy OBJDUMP=aarch64-elf-objdump LD=aarch64-elf-ld AS=aarch64-elf-as
-endif
+
+TARGET_KERNEL_CLANG_COMPILE := true
+TARGET_KERNEL_ADDITIONAL_FLAGS := AS=llvm-as LLVM_IAS=1 LLVM=1 LD=ld.lld AR=llvm-ar NM=llvm-nm STRIP=llvm-strip
+TARGET_KERNEL_ADDITIONAL_FLAGS += OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump READELF=llvm-readelf HOSTAR=llvm-ar HOSTLD=ld.lld
+TARGET_KERNEL_ADDITIONAL_FLAGS += HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
