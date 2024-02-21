@@ -31,29 +31,16 @@ on init
 on property:sys.boot_completed=1
     copy_per_line /dev/cpuctl/tasks /dev/cpuctl/system/tasks
 
-on early-init
-    # Boost schedtune
-    write /dev/stune/schedtune.boost 50
-    write /dev/stune/schedtune.prefer_idle 1
-
-    # Boost I/O performance
-    write /sys/block/mmcblk0/queue/scheduler "noop"
-
 on property:vendor.post_boot.parsed=1
-    exec u:r:vendor_qti_init_shell:s0 -- /vendor/bin/init.juice.perf.sh
-
     # Setup runtime cpusets
     write /dev/cpuset/top-app/cpus 0-7
     write /dev/cpuset/foreground/cpus 0-2,4-6
     write /dev/cpuset/background/cpus 0-1
-    write /dev/cpuset/system-background/cpus 0-3
     write /dev/cpuset/restricted/cpus 0-3
 
     # Configure CPU frequencies
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 300000
-    write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/hispeed_freq 1612800
     write /sys/devices/system/cpu/cpu6/cpufreq/scaling_min_freq 300000
-    write /sys/devices/system/cpu/cpu6/cpufreq/schedutil/hispeed_freq 1536000
 
     # Configure dynamic stune boost
     write /sys/module/cpu_boost/parameters/dynamic_stune_boost 15
@@ -68,8 +55,6 @@ on property:vendor.post_boot.parsed=1
     # Configure scheduler
     write /proc/sys/kernel/sched_child_runs_first 1
     write /proc/sys/kernel/sched_tunable_scaling 1
-    write /proc/sys/kernel/sched_downmigrate 85
-    write /proc/sys/kernel/sched_upmigrate 95
 
     # Setup default schedtune values for foreground/top-app
     write /dev/stune/schedtune.boost 0
@@ -110,9 +95,6 @@ on property:vendor.post_boot.parsed=1
     write /sys/block/sda/queue/nr_requests 128
     write /sys/block/sde/queue/nr_requests 128
     write /sys/block/sdf/queue/nr_requests 128
-
-    # Restore default I/O tuning
-    write /sys/block/mmcblk0/queue/scheduler "cfq"
 
     # Back to default VM settings
     write /proc/sys/vm/dirty_expire_centisecs 3000

@@ -62,9 +62,3 @@ sh_binary {
     src: "init.qti.early_init.sh",
     vendor: true,
 }
-
-sh_binary {
-    name: "init.juice.perf.sh",
-    src: "init.juice.perf.sh",
-    vendor: true,
-}
