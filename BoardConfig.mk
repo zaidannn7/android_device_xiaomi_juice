@@ -173,6 +173,9 @@ TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_RECOVERY_UI_MARGIN_HEIGHT := 150
 TARGET_USERIMAGES_USE_F2FS := true
 
+# ReloadedOS configuration
+include vendor/reloaded/config/BoardConfigReloaded.mk
+
 # Security patch level
 VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 
